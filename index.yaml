@@ -2,6 +2,31 @@ apiVersion: v1
 entries:
   tractusx-identityhub:
   - apiVersion: v2
+    appVersion: 0.4.1
+    created: "2026-09-28T14:08:10.350357624Z"
+    dependencies:
+    - alias: postgresql
+      condition: install.postgresql
+      name: postgres
+      repository: oci://registry-1.docker.io/cloudpirates
+      version: 0.11.0
+    - alias: vault
+      condition: install.vault
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.29.1
+    description: A Helm chart for Tractus-X IdentityHub, that deploys the IdentityHub
+      with postgresql and vault charts for persistance
+    digest: 75f53f4cf0460c42ff091906086ae90edabc2f63d7771e290d1e1b8fba035236
+    home: https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-identityhub
+    name: tractusx-identityhub
+    sources:
+    - https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-identityhub
+    type: application
+    urls:
+    - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-identityhub-v0.4.2/tractusx-identityhub-v0.4.2.tgz
+    version: v0.4.2
+  - apiVersion: v2
     appVersion: 0.3.2
     created: "2026-08-03T13:32:30.051093835Z"
     dependencies:
@@ -51,7 +76,38 @@ entries:
     urls:
     - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-identityhub-v0.3.2/tractusx-identityhub-v0.3.2.tgz
     version: v0.3.2
+  tractusx-identityhub-bundle:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-09-28T14:08:09.798709359Z"
+    dependencies:
+    - alias: backend
+      condition: backend.enabled
+      name: tractusx-identityhub
+      repository: file://../tractusx-identityhub
+      version: v0.4.2
+    description: A Helm chart for Kubernetes
+    digest: 106a2f6e6e6c4ad141a0c364a7e8df49b129ce28f2e9286a4619f0e5a23fcc93
+    name: tractusx-identityhub-bundle
+    type: application
+    urls:
+    - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-identityhub-bundle-0.1.0/tractusx-identityhub-bundle-0.1.0.tgz
+    version: 0.1.0
   tractusx-identityhub-memory:
+  - apiVersion: v2
+    appVersion: 0.4.1
+    created: "2026-09-28T14:08:10.10605728Z"
+    description: A Helm chart for Tractus-X IdentityHub, that deploys the IdentityHub
+      with in-memory persistance
+    digest: 0a793c5df54c946bee702f1b65847a32f180e44b063b42caec98015cac2f2900
+    home: https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-identityhub-memory
+    name: tractusx-identityhub-memory
+    sources:
+    - https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-identityhub-memory
+    type: application
+    urls:
+    - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-identityhub-memory-v0.4.2/tractusx-identityhub-memory-v0.4.2.tgz
+    version: v0.4.2
   - apiVersion: v2
     appVersion: 0.3.2
     created: "2026-08-03T13:32:29.859869738Z"
@@ -81,6 +137,35 @@ entries:
     - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-identityhub-memory-v0.3.2/tractusx-identityhub-memory-v0.3.2.tgz
     version: v0.3.2
   tractusx-issuerservice:
+  - apiVersion: v2
+    appVersion: 0.4.1
+    created: "2026-09-28T14:08:10.847291693Z"
+    dependencies:
+    - alias: postgresql
+      condition: install.postgresql
+      name: postgres
+      repository: oci://registry-1.docker.io/cloudpirates
+      version: 0.11.0
+    - alias: vault
+      condition: install.vault
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.29.1
+    - condition: pgadmin4.enabled
+      name: pgadmin4
+      repository: https://helm.runix.net
+      version: 1.25.x
+    description: A Helm chart for Tractus-X IssuerService, that deploys the IssuerService
+      with postgresql and vault charts for persistance
+    digest: 24373d54a83b2cfe9771af9338cd1babf539ce1d3da0a9e41d7322ee4f09237f
+    home: https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-issuerservice
+    name: tractusx-issuerservice
+    sources:
+    - https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-issuerservice
+    type: application
+    urls:
+    - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-issuerservice-v0.4.2/tractusx-issuerservice-v0.4.2.tgz
+    version: v0.4.2
   - apiVersion: v2
     appVersion: 0.3.2
     created: "2026-08-03T13:32:30.508960418Z"
@@ -141,6 +226,20 @@ entries:
     version: v0.3.2
   tractusx-issuerservice-memory:
   - apiVersion: v2
+    appVersion: 0.4.1
+    created: "2026-09-28T14:08:10.583123316Z"
+    description: A Helm chart for Tractus-X IssuerService, that deploys the IssuerService
+      with in-memory persistance
+    digest: 94a34589fa92d49e60536cb1cece8a8b9c2211a5ed08b2e834adf1d84c2f91a7
+    home: https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-issuerservice-memory
+    name: tractusx-issuerservice-memory
+    sources:
+    - https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-issuerservice-memory
+    type: application
+    urls:
+    - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-issuerservice-memory-v0.4.2/tractusx-issuerservice-memory-v0.4.2.tgz
+    version: v0.4.2
+  - apiVersion: v2
     appVersion: 0.3.2
     created: "2026-08-03T13:32:30.295879463Z"
     description: A Helm chart for Tractus-X IssuerService, that deploys the IssuerService
@@ -168,4 +267,4 @@ entries:
     urls:
     - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-issuerservice-memory-v0.3.2/tractusx-issuerservice-memory-v0.3.2.tgz
     version: v0.3.2
-generated: "2026-08-03T13:32:30.508983982Z"
+generated: "2026-09-28T14:08:10.847330075Z"
