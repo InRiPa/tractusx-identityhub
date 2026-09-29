@@ -27,6 +27,31 @@ entries:
     - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-identityhub-v0.4.3-pr344/tractusx-identityhub-v0.4.3-pr344.tgz
     version: v0.4.3-pr344
   - apiVersion: v2
+    appVersion: 0.4.1-pr344
+    created: "2026-09-29T09:13:51.694078497Z"
+    dependencies:
+    - alias: postgresql
+      condition: install.postgresql
+      name: postgres
+      repository: oci://registry-1.docker.io/cloudpirates
+      version: 0.11.0
+    - alias: vault
+      condition: install.vault
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.29.1
+    description: A Helm chart for Tractus-X IdentityHub, that deploys the IdentityHub
+      with postgresql and vault charts for persistance
+    digest: 94ca5d86b56045592287dd35b11cb7d9de1da9d412faf10e4cce82635d0cc522
+    home: https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-identityhub
+    name: tractusx-identityhub
+    sources:
+    - https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-identityhub
+    type: application
+    urls:
+    - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-identityhub-v0.4.3-pr344/tractusx-identityhub-v0.4.3-pr344.tgz
+    version: v0.4.3-pr344
+  - apiVersion: v2
     appVersion: 0.4.1
     created: "2026-09-28T14:08:10.350357624Z"
     dependencies:
@@ -120,6 +145,22 @@ entries:
     version: v0.4.3-pr344
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-09-29T09:13:51.266988763Z"
+    dependencies:
+    - alias: backend
+      condition: backend.enabled
+      name: tractusx-identityhub
+      repository: file://../tractusx-identityhub
+      version: v0.4.3-pr344
+    description: A Helm chart for Kubernetes
+    digest: 4e80b34bd30764632308381eb1f3a9e64e49179a82e490af2930240dbb464af3
+    name: tractusx-identityhub-bundle
+    type: application
+    urls:
+    - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-identityhub-bundle-v0.4.3-pr344/tractusx-identityhub-bundle-v0.4.3-pr344.tgz
+    version: v0.4.3-pr344
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-09-28T14:08:09.798709359Z"
     dependencies:
     - alias: backend
@@ -199,6 +240,35 @@ entries:
     description: A Helm chart for Tractus-X IssuerService, that deploys the IssuerService
       with postgresql and vault charts for persistance
     digest: 3ac6e6390ea0a3c93f89e21b5f989b31ab5708dae99c8feb0cf07e0311395c19
+    home: https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-issuerservice
+    name: tractusx-issuerservice
+    sources:
+    - https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-issuerservice
+    type: application
+    urls:
+    - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-issuerservice-v0.4.3-pr344/tractusx-issuerservice-v0.4.3-pr344.tgz
+    version: v0.4.3-pr344
+  - apiVersion: v2
+    appVersion: 0.4.1-pr344
+    created: "2026-09-29T09:13:52.089763062Z"
+    dependencies:
+    - alias: postgresql
+      condition: install.postgresql
+      name: postgres
+      repository: oci://registry-1.docker.io/cloudpirates
+      version: 0.11.0
+    - alias: vault
+      condition: install.vault
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      version: 0.29.1
+    - condition: pgadmin4.enabled
+      name: pgadmin4
+      repository: https://helm.runix.net
+      version: 1.25.x
+    description: A Helm chart for Tractus-X IssuerService, that deploys the IssuerService
+      with postgresql and vault charts for persistance
+    digest: bb9d4a564e807d14d21419022acdb136805edab1dc3a80560b3b090034eeed09
     home: https://github.com/eclipse-tractusx/tractusx-identityhub/tree/main/charts/tractusx-issuerservice
     name: tractusx-issuerservice
     sources:
@@ -337,4 +407,4 @@ entries:
     urls:
     - https://github.com/InRiPa/tractusx-identityhub/releases/download/tractusx-issuerservice-memory-v0.3.2/tractusx-issuerservice-memory-v0.3.2.tgz
     version: v0.3.2
-generated: "2026-09-29T09:13:02.696791684Z"
+generated: "2026-09-29T09:13:52.089849624Z"
